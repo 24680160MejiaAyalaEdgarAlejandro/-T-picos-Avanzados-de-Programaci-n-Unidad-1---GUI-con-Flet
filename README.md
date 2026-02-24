@@ -1,24 +1,32 @@
-Para el desarrollo de estos proyectos se utilizaron las siguientes herramientas. Haz clic en las insignias para ir a los sitios de descarga oficial:
-
-[![Python 3.12+](https://img.shields.io/badge/Python-3.12+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/downloads/)
-[![Flet 0.21+](https://img.shields.io/badge/Flet-0.21+-0052FF?style=for-the-badge&logo=flutter&logoColor=white)](https://flet.dev/docs/install/)
-[![Git Bash-](https://img.shields.io/badge/Git_Bash-v2.44-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/downloads)
-[![Visual Studio Code](https://img.shields.io/badge/VS_Code-1.87+-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/)
+# 📘 Unidad 1: Ingeniería de Interfaces de Usuario (GUI)
+### Materia: Tópicos Avanzados de Programación
 
 ### 1.1 Creación de Interfaz Gráfica para Usuarios 🏗️
 
-La creación de una GUI trasciende el diseño visual; es la implementación de una capa de abstracción entre la lógica del negocio y el usuario final. 
+La creación de una GUI consiste en diseñar el entorno visual a través del cual el usuario interactúa con el software. En el desarrollo moderno, esto se basa en Layouts (estructuras de acomodo).
 
+Contenedores (Container): Son la base del diseño. Permiten agrupar elementos, aplicar bordes, colores de fondo, sombras y redondeado (border_radius).
+Columnas y Filas (Column / Row): Organizan los elementos de forma vertical u horizontal. Son esenciales para lograr una interfaz responsiva.
+
+Alineación: Se controla mediante propiedades como horizontal_alignment y vertical_alignment para centrar o distribuir los componentes en la pantalla.
 * **Paradigma de Diseño Declarativo:** A diferencia del modelo imperativo (donde se instruye cómo dibujar cada píxel), en este proyecto se utiliza el enfoque declarativo.
 * Se define el **Estado Deseado** de la interfaz y el framework se encarga del renderizado optimizado.
 * **Arquitectura de Contenedores (Layout Engine):** * **Composición sobre Herencia:** La interfaz se construye mediante la composición de objetos. Un `ft.Container` no es solo un
 * cuadro; es un objeto con propiedades de **Modelo de Caja (Box Model)** que gestiona `padding`, `margin`, y `alignment`.
     * **Sistemas de Coordenadas Flexibles:** Se implementan `Row` (Eje Horizontal) y `Column` (Eje Vertical) para crear layouts responsivos. Esto permite que componentes como los
     * botones de la **Calculadora** mantengan proporciones áureas independientemente de la resolución del dispositivo.
-
+<img width="265" height="190" alt="image" src="https://github.com/user-attachments/assets/b473eb6e-8493-4772-a721-e09c255c2b80" />
 
 
 ### 1.2 Tipos de Eventos ⚡
+
+Un evento es una acción que ocurre en el sistema y a la cual el programa puede responder. En programación avanzada, los eventos se clasifican según su origen:
+
+Eventos de Ratón: Clics (on_click), pasar el cursor por encima (on_hover) o arrastrar.
+Eventos de Teclado: Presionar una tecla específica o enviar un formulario con la tecla Enter (on_submit).
+Eventos de Cambio: Se disparan cuando el contenido de un componente se modifica, como escribir en un cuadro de texto (on_change) o seleccionar una opción en un menú.
+Eventos de Sesión: Ocurren cuando un usuario entra o sale de la aplicación (como lo que manejamos en el Chat).
+
 En programación avanzada, un evento es un mensaje asíncrono enviado por el Sistema Operativo hacia el **Event Loop** de la aplicación. Los clasificamos técnicamente como:
 
 * **Eventos de Dispositivo de Entrada (HCI):** * **Basados en Puntero:** `on_click`, `on_hover`. Manejan la posición (x, y) y el estado del periférico.
@@ -26,9 +34,17 @@ En programación avanzada, un evento es un mensaje asíncrono enviado por el Sis
 * **Eventos de Estado y Cambio:** El evento `on_change` es crítico para la validación reactiva; permite interceptar el flujo de datos en el instante en que el usuario modifica un componente.
 * **Eventos de Sesión y Protocolo:** En entornos multiusuario, manejamos eventos de entrada/salida de sesión, fundamentales para la gestión de sockets y concurrencia.
 
-### 1.3 Manejo de Eventos (Event Handling) ⚙️
-El manejo de eventos se basa en el **Patrón de Diseño Observer**. La aplicación se mantiene en un estado de "espera activa" hasta que una fuente genera un estímulo.
+<img width="265" height="190" alt="image" src="https://github.com/user-attachments/assets/5d0e867e-b0ad-4dc8-9610-f1bbd1245265" />
 
+
+### 1.3 Manejo de Eventos (Event Handling) ⚙️
+El manejo de eventos (Event Handling) es la lógica que se ejecuta cuando ocurre un evento. Se basa en tres pilares:
+
+Event Source (Fuente): El componente que genera el evento (un Botón, por ejemplo).
+Event Listener (Escuchador): La propiedad del componente que está atenta a la acción (ej: on_click).
+Event Handler (Manejador): La función de Python que se ejecuta. En Flet, estas funciones suelen recibir un argumento e (el evento) que contiene información extra.
+
+Ejemplo: def mi_funcion(e): print("Botón presionado")
 * **Pilares del Manejo:**
     1. **Fuente (Source):** El componente que emite la señal.
     2. **Callback (Handler):** La función de orden superior que se suscribe al evento.
@@ -39,8 +55,13 @@ El manejo de eventos se basa en el **Patrón de Diseño Observer**. La aplicaci�
 
 
 ### 1.4 Manejo de Componentes Gráficos de Control 🛠️
-Los componentes de control son la unidad mínima de interacción. Según la ingeniería de software, estos deben poseer **Encapsulamiento** y **Baja Cohesión**.
+Los componentes de control son objetos visuales que permiten al usuario introducir datos o tomar decisiones. En nuestro trabajo hemos dominado los siguientes:
 
+TextField: Para entrada de texto. Incluye validaciones mediante la propiedad error_text.
+Dropdown: Menú desplegable para seleccionar una opción de una lista predefinida (ej: Carreras).
+RadioGroup: Conjunto de botones de opción donde solo se puede seleccionar uno a la vez (ej: Género).
+
+Button: El disparador principal de acciones. Puede contener texto, iconos y estilos personalizados.
 * **Controles de Entrada Primaria (`TextField`):** Gestionan el buffer de entrada. Poseen propiedades de validación como `error_text` para reducir la carga cognitiva del usuario.
 * **Controles de Selección Restringida (`Dropdown` / `RadioGroup`):** Implementan lógica de selección única para evitar estados inválidos en el sistema (ej. selección de carrera o género).
 * **Controles de Retroalimentación Activa:**
