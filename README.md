@@ -1,6 +1,25 @@
 # 📘 Unidad 1: Ingeniería de Interfaces de Usuario (GUI)
 ### Materia: Tópicos Avanzados de Programación
 
+# 🚀 Tópicos Avanzados de Programación
+
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Flet](https://img.shields.io/badge/flet-D1345B?style=for-the-badge&logo=google-chrome&logoColor=white)
+![VS Code](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+
+### 🎨 De Líneas de Comando a Píxeles Perfectos
+
+Bienvenido al repositorio de **Tópicos Avanzados de Programación**. Aquí el código cobra vida y forma. En esta primera unidad, exploramos el ecosistema de **Flet (v0.80.5)** para transformar simples scripts de Python en interfaces potentes, estéticamente cuidadas y 100% funcionales.
+
+---
+
+## 🛠️ Stack Tecnológico
+* **Lenguaje:** Python 🐍
+* **Framework:** Flet (Entorno de desarrollo ágil para GUIs)
+* **Entorno:** Visual Studio Code + Virtual Environments (`.venv`)
+* **Control de Versiones:** Git & GitHub
+
 ### 1.1 Creación de Interfaz Gráfica para Usuarios 🏗️
 
 La creación de una GUI consiste en diseñar el entorno visual a través del cual el usuario interactúa con el software. En el desarrollo moderno, esto se basa en Layouts (estructuras de acomodo).
