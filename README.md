@@ -1,5 +1,4 @@
 # 📘 Unidad 1: Ingeniería de Interfaces de Usuario (GUI)
-### Materia: Tópicos Avanzados de Programación
 
 # 🚀 Tópicos Avanzados de Programación
 
@@ -10,7 +9,7 @@
 
 ### 🎨 De Líneas de Comando a Píxeles Perfectos
 
-Bienvenido al repositorio de **Tópicos Avanzados de Programación**. Aquí el código cobra vida y forma. En esta primera unidad, exploramos el ecosistema de **Flet (v0.80.5)** para transformar simples scripts de Python en interfaces potentes, estéticamente cuidadas y 100% funcionales.
+Bienvenido al repositorio de **Tópicos Avanzados de Programación**. Aquí el código cobra vida y forma. En esta primera unidad, exploramos el ecosistema de **Flet (v0.80.5)** para transformar simples scripts de Python en interfaces potentes.
 
 ---
 
